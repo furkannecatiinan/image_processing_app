@@ -1,323 +1,189 @@
 # Digital Image Processing Application
 
-A comprehensive Streamlit application for digital image processing with real-time preview and multi-language support.
+A comprehensive Streamlit-based digital image processing application inspired by the classic textbook **"Digital Image Processing" by Gonzalez & Woods**. This application brings theoretical concepts to life through an interactive, user-friendly interface.
 
-## 🌍 Multi-Language Support
+## Inspiration
 
-The application now supports both **Turkish** and **English** languages with complete localization:
+This project is inspired by **"Digital Image Processing" (4th Edition) by Rafael C. Gonzalez and Richard E. Woods**, the gold standard in digital image processing education. The application implements fundamental concepts from this textbook:
 
-### ✅ Completed Features
+- Spatial Domain Processing (Chapter 3)
+- Frequency Domain Processing (Chapter 4)
+- Image Restoration (Chapter 5)
+- Color Image Processing (Chapter 6)
+- Morphological Processing (Chapter 9)
+- Image Segmentation (Chapter 10)
 
-1. **Complete UI Translation**
-   - All user interface elements are translated
-   - Filter names and categories
-   - Parameter labels and descriptions
-   - Button texts and messages
-   - Tips and help text
+## Features
 
-2. **State Preservation**
-   - Language switching doesn't reset the application state
-   - Uploaded images are preserved
-   - Selected filters and parameters are maintained
-   - Processed images are kept in memory
+### Core Operations
+- **Spatial Filters**: Gaussian, Median, Bilateral filtering
+- **Edge Detection**: Sobel, Canny, Laplacian operators
+- **Thresholding**: Binary, Otsu, Adaptive methods
+- **Morphological Operations**: Erosion, Dilation, Opening, Closing
+- **Frequency Domain**: Low-pass, High-pass, Band-pass filters
+- **Color Processing**: RGB transformations, Color space conversions
+- **Image Restoration**: Noise reduction and enhancement
+- **Segmentation**: Watershed, K-means clustering
 
-3. **Dynamic Content**
-   - Filter categories update based on selected language
-   - All tooltips and help messages are localized
-   - Error messages and notifications are translated
+### User Experience
+- Real-time preview of filter effects
+- Interactive parameter controls
+- Multi-language support (English/Turkish)
+- State preservation when switching languages
+- Responsive design for desktop and mobile
 
-### 🔧 Language System Architecture
-
-#### Core Files:
-- `languages.py` - Contains all translations and language utilities
-- `utils.py` - State management and language switching utilities
-- `app.py` - Main application with integrated language support
-
-#### Key Functions:
-- `get_text(key, language)` - Get localized text for any UI element
-- `get_localized_filter_categories(language)` - Get filter categories in selected language
-- `change_language(new_language)` - Switch language while preserving state
-- `initialize_session_state()` - Initialize all session state variables
-
-### 📝 Translation Coverage
-
-#### UI Elements:
-- ✅ Application title and headers
-- ✅ Upload interface
-- ✅ Filter selection menus
-- ✅ Parameter sliders and inputs
-- ✅ Button labels
-- ✅ Tips and help messages
-- ✅ Error messages
-- ✅ Image captions and labels
-
-#### Filter Categories:
-- ✅ Basic Filters (Temel Filtreler)
-- ✅ Advanced Filters (Gelişmiş Filtreler)
-- ✅ Morphological Operations (Morfolojik İşlemler)
-- ✅ Segmentation (Segmentasyon)
-
-#### Filter Names:
-- ✅ Gaussian Blur (Gaussian Bulanıklaştırma)
-- ✅ Edge Detection (Kenar Belirleme)
-- ✅ Thresholding (Eşikleme)
-- ✅ Intensity Transform (Yoğunluk Dönüşümü)
-- ✅ Frequency Filter (Frekans Filtresi)
-- ✅ Noise Reduction (Gürültü Azaltma)
-- ✅ Morphological Operations (Morfolojik İşlemler)
-- ✅ Watershed Segmentation (Watershed Segmentasyonu)
-- ✅ K-Means Clustering (K-Ortalama Kümeleme)
-
-#### Parameters:
-- ✅ Kernel Size (Çekirdek Boyutu)
-- ✅ Sigma (Sigma)
-- ✅ Method (Yöntem)
-- ✅ Threshold Value (Eşik Değeri)
-- ✅ Transform Type (Dönüşüm Türü)
-- ✅ Filter Type (Filtre Türü)
-- ✅ Operation (İşlem)
-- ✅ And many more...
-
-### 🚀 How to Use
-
-1. **Language Selection**: Use the language buttons in the top-right corner
-2. **State Preservation**: Your current work (uploaded image, selected filters, etc.) will be preserved when switching languages
-3. **Dynamic Updates**: All UI elements update immediately when language is changed
-
-### 🛠️ Technical Implementation
-
-#### State Management:
-```python
-# Initialize session state
-initialize_session_state()
-
-# Change language without losing state
-change_language('en')  # or 'tr'
-
-# Restore state after language change
-restore_state()
-```
-
-#### Translation Usage:
-```python
-# Get localized text
-title = get_text('title', st.session_state.language)
-
-# Get localized filter categories
-categories = get_localized_filter_categories(st.session_state.language)
-```
-
-### 📚 Content Files
-
-The application includes localized content files in the `info/` directory:
-- `fundamentals.md` / `fundamentals_tr.md` - Basic concepts
-- `gaussian_blur.md` / `gaussian_blur_tr.md` - Gaussian blur information
-- `edge_detection.md` / `edge_detection_tr.md` - Edge detection details
-- `threshold.md` / `threshold_tr.md` - Thresholding information
-- And more...
-
-### 🎯 Benefits
-
-1. **User Experience**: Users can work in their preferred language
-2. **State Preservation**: No loss of work when switching languages
-3. **Complete Coverage**: All UI elements are properly translated
-4. **Maintainable**: Centralized translation system for easy updates
-5. **Extensible**: Easy to add new languages in the future
-
-## 🚀 Running the Application
+## Quick Start
 
 ```bash
+# Clone the repository
+git clone https://github.com/furkannecatiinan/image_processing_app.git
+cd image_processing_app
+
 # Install dependencies
 pip install -r requirements.txt
 
 # Run the application
 streamlit run app.py
-
-# Or use the provided script
-./run.sh
 ```
 
-The application will be available at `http://localhost:8501` with full Turkish-English language support.
+## Academic Applications
 
-## 🔄 Language Switching
+Perfect for:
+- Computer Vision courses
+- Digital Image Processing classes
+- Research projects
+- Self-study and algorithm testing
 
-- Click the 🇹🇷 **Türkçe** button for Turkish
-- Click the 🇺🇸 **English** button for English
-- Your current work (uploaded image, selected filters, parameters) will be preserved
+## Technical Stack
 
-## 📝 Adding New Translations
+- **Frontend**: Streamlit
+- **Image Processing**: OpenCV, NumPy, PIL
+- **Visualization**: Matplotlib
+- **Language Support**: Custom localization system
 
-To add new translations:
-
-1. Add new keys to the `TRANSLATIONS` dictionary in `languages.py`
-2. Provide both English and Turkish translations
-3. Use the `get_text()` function in your code
-
-Example:
-```python
-# In languages.py
-'transforms': 'Intensity Transforms',
-'transforms': 'Yoğunluk Dönüşümleri',
-
-# In your code
-text = get_text('transforms', st.session_state.language)
-```
-
-The language system is now complete and provides a seamless bilingual experience for users!
-
-## Özellikler
-
-### Çok Dilli Destek
-- **Türkçe** - Tam Türkçe arayüz ve açıklamalar
-- **İngilizce** - Complete English interface and descriptions
-
-### Tema Desteği
-- **Light Mode** - Klasik beyaz tema
-- **Dark Mode** - Modern koyu tema
-
-### Görüntü İşleme Kategorileri
-
-1. **Temel Kavramlar (Fundamentals)**
-   - Gaussian Bulanıklaştırma
-   - Kenar Belirleme (Sobel, Canny)
-   - Eşikleme (Binary, Otsu, Adaptive)
-
-2. **Yoğunluk Dönüşümleri (Intensity Transforms)**
-   - Doğrusal Dönüşüm
-   - Logaritmik Dönüşüm
-   - Güç Yasası (Gamma)
-   - Histogram Eşitleme
-
-3. **Frekans Alanı (Frequency Domain)**
-   - Alçak Geçiren Filtre
-   - Yüksek Geçiren Filtre
-   - Bant Geçiren Filtre
-
-4. **Görüntü Restorasyon (Image Restoration)**
-   - Gürültü Ekleme (Gaussian, Salt&Pepper, Speckle)
-   - Gürültü Azaltma (Gaussian, Median, Bilateral)
-
-5. **Renk İşleme (Color Processing)**
-   - Renk Dengesi
-   - Renk Yumuşatma
-   - Renk Uzayı Dönüşümü (RGB, HSV, LAB, YUV)
-   - Sahte Renk
-
-6. **Wavelet Dönüşümü (Wavelet Transform)**
-   - Haar Wavelets
-   - Daubechies Wavelets
-   - Biorthogonal Wavelets
-
-7. **Görüntü Sıkıştırma (Image Compression)**
-   - JPEG Sıkıştırma
-   - Wavelet Sıkıştırma
-   - Run Length Encoding
-   - Huffman Kodlama
-
-8. **Morfolojik İşlemler (Morphological Operations)**
-   - Aşındırma (Erosion)
-   - Genişletme (Dilation)
-   - Açma (Opening)
-   - Kapama (Closing)
-
-9. **Görüntü Bölütleme (Image Segmentation)**
-   - Watershed
-   - GrabCut
-   - K-Means Clustering
-
-10. **Özellik Çıkarımı (Feature Extraction)**
-    - Temel Özellikler
-    - Doku Özellikleri
-    - Renk Histogramı
-
-## Kurulum
-
-### 1. Gereksinimler
-```bash
-cd streamlit
-pip install -r requirements.txt
-```
-
-### 2. Uygulamayı Çalıştırma
-```bash
-streamlit run app.py
-```
-
-Uygulama varsayılan olarak `http://localhost:8501` adresinde açılacaktır.
-
-## Kullanım
-
-### 1. Görüntü Yükleme
-- Sol kenar çubuğundaki "Upload Image" butonunu kullanın
-- Desteklenen formatlar: PNG, JPG, JPEG, BMP, TIFF
-- Alternatif olarak örnek görüntüleri kullanabilirsiniz
-
-### 2. Filtre Seçimi
-- Sol kenar çubuğundan bir kategori seçin
-- Her kategori kendi filtre seçenekleri sunar
-- Parametreleri ayarlayın ve "Apply Filter" butonuna basın
-
-### 3. Sonuç Görüntüleme
-- Orijinal ve işlenmiş görüntüler yan yana görüntülenir
-- İşlenmiş görüntüyü "Download Processed Image" butonu ile indirebilirsiniz
-
-### 4. Dil ve Tema Değiştirme
-- Sağ üst köşeden dil seçeneklerini değiştirebilirsiniz
-- Dark Mode'u açıp kapatabilirsiniz
-
-## Proje Yapısı
+## Dependencies
 
 ```
-streamlit/
-├── app.py                 # Ana Streamlit uygulaması
-├── languages.py           # Çok dilli destek
-├── filters_ui.py          # Filtre UI bileşenleri
-├── utils.py              # Yardımcı fonksiyonlar
-├── requirements.txt       # Python bağımlılıkları
-├── .streamlit/
-│   └── config.toml       # Streamlit konfigürasyonu
-└── README.md             # Bu dosya
+streamlit>=1.28.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+Pillow>=10.0.0
+matplotlib>=3.7.0
 ```
 
-## Orijinal Tkinter Versiyonundan Farklar
+## Contributing
 
-### Avantajlar
-- **Web Tabanlı**: Herhangi bir tarayıcıdan erişilebilir
-- **Modern UI**: Daha temiz ve kullanıcı dostu arayüz
-- **Responsive**: Farklı ekran boyutlarına uyum
-- **Kolay Paylaşım**: URL ile kolayca paylaşılabilir
-- **Otomatik Güncellemeler**: Kod değişiklikleri anında yansır
+We welcome contributions! Please feel free to:
+- Report bugs and issues
+- Suggest new features
+- Add new image processing algorithms
+- Improve documentation
 
-### Teknik İyileştirmeler
-- **Gerçek Zamanlı Önizleme**: Parametreler değiştirildiğinde anlık görüntü
-- **Otomatik Görüntü Boyutlandırma**: Ekrana göre otomatik ölçeklendirme
-- **Gelişmiş Hata Yönetimi**: Daha iyi hata mesajları
-- **Performans Optimizasyonu**: Streamlit'in caching özelliği
+## License
 
-## Geliştirme
+This project is open source and available under the MIT License.
 
-### Yeni Filtre Ekleme
-1. `filters/` klasöründe yeni filtre fonksiyonunu ekleyin
-2. `filters_ui.py` dosyasında UI kontrollerini tanımlayın
-3. `languages.py` dosyasında çevirileri ekleyin
+## Acknowledgments
 
-### Tema Özelleştirme
-`utils.py` dosyasındaki `apply_dark_mode()` fonksiyonunu düzenleyin.
-
-## Sorun Giderme
-
-### Yaygın Sorunlar
-1. **Import Hatası**: Ana dizinin Python path'inde olduğundan emin olun
-2. **Görüntü Yüklenmiyor**: Dosya formatının desteklendiğini kontrol edin
-3. **Filtre Çalışmıyor**: Görüntünün önce yüklendiğinden emin olun
-
-### Destek
-Sorunlar için GitHub issues açabilir veya kod geliştirmelerine katkıda bulunabilirsiniz.
-
-## Lisans
-
-Bu proje MIT lisansı altında lisanslanmıştır.
+- **Gonzalez & Woods**: For the foundational textbook
+- **OpenCV Community**: For the excellent computer vision library
+- **Streamlit Team**: For the amazing web framework
 
 ---
 
-**Not**: Bu Streamlit versiyonu, orijinal Tkinter uygulamasının tüm özelliklerini koruyarak modern bir web arayüzü sunar. Tüm görüntü işleme algoritmaları aynı kalmış, sadece kullanıcı arayüzü modernize edilmiştir. 
+# Dijital Görüntü İşleme Uygulaması
+
+**Gonzalez & Woods**'un klasik ders kitabından esinlenilerek geliştirilmiş kapsamlı bir Streamlit tabanlı dijital görüntü işleme uygulaması. Bu uygulama, teorik kavramları etkileşimli ve kullanıcı dostu bir arayüz aracılığıyla hayata geçirir.
+
+## İlham Kaynağı
+
+Bu proje, dijital görüntü işleme eğitiminde altın standart olan **Rafael C. Gonzalez ve Richard E. Woods**'un **"Digital Image Processing" (4. Baskı)** ders kitabından esinlenilmiştir. Uygulama, bu ders kitabındaki temel kavramları uygular:
+
+- Uzamsal Alan İşleme (Bölüm 3)
+- Frekans Alanı İşleme (Bölüm 4)
+- Görüntü Restorasyonu (Bölüm 5)
+- Renkli Görüntü İşleme (Bölüm 6)
+- Morfolojik İşleme (Bölüm 9)
+- Görüntü Bölütleme (Bölüm 10)
+
+## Özellikler
+
+### Temel İşlemler
+- **Uzamsal Filtreler**: Gaussian, Median, Bilateral filtreleme
+- **Kenar Belirleme**: Sobel, Canny, Laplacian operatörleri
+- **Eşikleme**: Binary, Otsu, Adaptive yöntemler
+- **Morfolojik İşlemler**: Aşındırma, Genişletme, Açma, Kapama
+- **Frekans Alanı**: Alçak geçiren, Yüksek geçiren, Bant geçiren filtreler
+- **Renk İşleme**: RGB dönüşümleri, Renk uzayı dönüşümleri
+- **Görüntü Restorasyonu**: Gürültü azaltma ve iyileştirme
+- **Bölütleme**: Watershed, K-means kümeleme
+
+### Kullanıcı Deneyimi
+- Filtre etkilerinin gerçek zamanlı önizlemesi
+- Etkileşimli parametre kontrolleri
+- Çok dilli destek (İngilizce/Türkçe)
+- Dil değiştirirken durum korunması
+- Masaüstü ve mobil için duyarlı tasarım
+
+## Hızlı Başlangıç
+
+```bash
+# Repository'yi klonlayın
+git clone https://github.com/furkannecatiinan/image_processing_app.git
+cd image_processing_app
+
+# Bağımlılıkları yükleyin
+pip install -r requirements.txt
+
+# Uygulamayı çalıştırın
+streamlit run app.py
+```
+
+## Akademik Uygulamalar
+
+Şunlar için mükemmel:
+- Bilgisayarlı Görü dersleri
+- Dijital Görüntü İşleme sınıfları
+- Araştırma projeleri
+- Kendi kendine öğrenme ve algoritma testi
+
+## Teknik Altyapı
+
+- **Ön Yüz**: Streamlit
+- **Görüntü İşleme**: OpenCV, NumPy, PIL
+- **Görselleştirme**: Matplotlib
+- **Dil Desteği**: Özel yerelleştirme sistemi
+
+## Bağımlılıklar
+
+```
+streamlit>=1.28.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+Pillow>=10.0.0
+matplotlib>=3.7.0
+```
+
+## Katkıda Bulunma
+
+Katkılarınızı bekliyoruz! Lütfen:
+- Hata ve sorunları bildirin
+- Yeni özellikler önerin
+- Yeni görüntü işleme algoritmaları ekleyin
+- Dokümantasyonu iyileştirin
+
+## Lisans
+
+Bu proje açık kaynak kodludur ve MIT Lisansı altında kullanılabilir.
+
+## Teşekkürler
+
+- **Gonzalez & Woods**: Temel ders kitabı için
+- **OpenCV Topluluğu**: Mükemmel bilgisayarlı görü kütüphanesi için
+- **Streamlit Ekibi**: Harika web framework'ü için
+
+---
+
+*"The best way to learn is by doing. This application bridges the gap between theory and practice in digital image processing."*
+
+*"En iyi öğrenme yolu yaparak öğrenmektir. Bu uygulama, dijital görüntü işlemede teori ile pratik arasındaki boşluğu kapatır."* 
