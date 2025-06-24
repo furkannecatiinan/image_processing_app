@@ -4,7 +4,7 @@ A comprehensive Streamlit-based digital image processing application inspired by
 
 ## Inspiration
 
-This project is inspired by **"Digital Image Processing" (4th Edition) by Rafael C. Gonzalez and Richard E. Woods**, the gold standard in digital image processing education. The application implements fundamental concepts from this textbook:
+This project is inspired by **"Digital Image Processing" (4th Edition) by Rafael C. Gonzalez and Richard E. Woods**, the standard in digital image processing education. The application implements fundamental concepts from this textbook:
 
 - Spatial Domain Processing (Chapter 3)
 - Frequency Domain Processing (Chapter 4)
@@ -97,7 +97,7 @@ This project is open source and available under the MIT License.
 
 ## İlham Kaynağı
 
-Bu proje, dijital görüntü işleme eğitiminde altın standart olan **Rafael C. Gonzalez ve Richard E. Woods**'un **"Digital Image Processing" (4. Baskı)** ders kitabından esinlenilmiştir. Uygulama, bu ders kitabındaki temel kavramları uygular:
+Bu proje, dijital görüntü işleme eğitiminde standart olan **Rafael C. Gonzalez ve Richard E. Woods**'un **"Digital Image Processing" (4. Baskı)** ders kitabından esinlenilmiştir. Uygulama, bu ders kitabındaki temel kavramları uygular:
 
 - Uzamsal Alan İşleme (Bölüm 3)
 - Frekans Alanı İşleme (Bölüm 4)
@@ -183,7 +183,3 @@ Bu proje açık kaynak kodludur ve MIT Lisansı altında kullanılabilir.
 - **Streamlit Ekibi**: Harika web framework'ü için
 
 ---
-
-*"The best way to learn is by doing. This application bridges the gap between theory and practice in digital image processing."*
-
-*"En iyi öğrenme yolu yaparak öğrenmektir. Bu uygulama, dijital görüntü işlemede teori ile pratik arasındaki boşluğu kapatır."* 
